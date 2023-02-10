@@ -1,0 +1,7 @@
+offices:
+  all: All offices
+  discover: Discover the office
+  discover_persons: The office team
+  title:
+    one: Office
+    other: Offices

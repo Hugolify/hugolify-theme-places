@@ -1,0 +1,7 @@
+offices:
+  all: Tous les bureaux
+  discover: Découvrez le bureau
+  discover_persons: L’équipe du bureau
+  title:
+    one: Bureau
+    other: Bureaux

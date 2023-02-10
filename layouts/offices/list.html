@@ -1,0 +1,10 @@
+{{ define "hero"}}
+  {{- partial "offices/hero" . -}}
+{{ end }}
+
+{{ define "main" }}
+LIST
+  {{ partial "offices/schema" . }}
+  {{ partial "offices/blocks" . }}
+  {{ partial "offices/container" . }}
+{{ end }}

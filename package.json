@@ -1,0 +1,21 @@
+{
+    "name": "hugolify-theme-offices",
+    "version": "1.0.0",
+    "homepage": "https://www.hugolify.com",
+    "repository": "https://github.com/hugolify/hugolify-theme-offices",
+    "bugs": {
+        "url": "https://github.com/hugolify/hugolify-theme-offices/issues"
+    },
+    "author": {
+        "email": "sebousan@gmail.com",
+        "name": "Sébastien Moulène",
+        "url": "https://www.sebastienmoulene.com/"
+    },
+    "keywords": [
+        "hugolify",
+        "hugo",
+        "hugo-theme",
+        "bootstrap"
+    ],
+    "license": "MIT"
+}
