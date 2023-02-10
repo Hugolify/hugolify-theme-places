@@ -9,6 +9,16 @@ module:
     - source: layouts
       target: layouts
 
+params:
+  offices:
+    thumbnail:
+      desktop: "414x414"
+      mobile: "300x300"
+      scrollsnap: "240x103"
+    image:
+      desktop: "300x"
+      mobile: "198x"
+
 # Default
 permalinks:
   tags: /offices/:slug/
