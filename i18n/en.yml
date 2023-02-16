@@ -1,7 +1,9 @@
 offices:
   all: All offices
+  latest: Latest offices
   discover: Discover the office
   discover_persons: The office team
+  more: Discover more offices
   title:
     one: Office
     other: Offices
