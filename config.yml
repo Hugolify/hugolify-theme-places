@@ -12,9 +12,9 @@ module:
 params:
   offices:
     thumbnail:
-      desktop: "416x416"
+      desktop: "302x302"
       mobile: "300x300"
-      scrollsnap: "240x103"
+      scrollsnap: "240x240"
     image:
       desktop: "416x"
       mobile: "198x"

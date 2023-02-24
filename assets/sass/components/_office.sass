@@ -1,5 +1,4 @@
 .office
-    --bs-card-spacer-x: 0
     --bs-card-border-width: 0
     --bs-card-border-radius: 0
     --bs-card-inner-border-radius: 0
@@ -10,7 +9,27 @@
     @extend .card
     .media
         --bs-aspect-ratio: 100%
+        img
+            object-fit: cover
     a
         @extend .stretched-link
+    address
+        @extend .small
+        @extend .text-muted
+        margin-bottom: $paragraph-margin-bottom
+    .name
+        font-size: $h3-font-size
     .cta
-        @extend .btn-primary
+        @extend .btn-link
+        @extend .btn-sm
+        margin-left: calc(var(--bs-btn-padding-x) * -1)
+
+    @include media-breakpoint-up(lg)
+        align-items: center
+        flex-direction: row
+        .content,
+        .media
+            flex: 1
+
+    @include media-breakpoint-down(lg)
+        --bs-card-spacer-x: 0
