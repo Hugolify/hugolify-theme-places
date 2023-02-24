@@ -1,26 +1,48 @@
 .term-offices
     .office-persons
         @include rfs(calc(#{$global-spacing} * 2), margin-top)
+    address
+        --bs-card-spacer-x: 0
+        --bs-card-spacer-y: 0
+    .hero
+        address
+            @extend .small
+        
 
     @include media-breakpoint-up(md)
         .grid
             >
                 .featured-image
-                    grid-column: 1/4
+                    grid-column: 1/6
+                    grid-row: 1/4
                 .content
-                    grid-column: 4/9
+                    grid-column: 6/13
+                    grid-row: 1
                 .sidebar
-                    grid-column: 10/13
+                    grid-column: 6/12
+                    grid-row: 2
+                    margin-top: calc(#{$paragraph-margin-bottom} * 2)
                 .office-persons
                     grid-column: 1/13
+    @include media-breakpoint-up(lg)
+        .grid
+            >
+                .content
+                    grid-column: 6/12
+                .sidebar
+                    grid-column: 6/10
+    @include media-breakpoint-up(xl)
+        .grid
+            >
+                .featured-image
+                    grid-column: 2/6
+                .sidebar
+                    grid-column: 6/9
                     
     @include media-breakpoint-down(md)
         .grid
             >
                 .featured-image
-                    order: 1
                     width: 66%
-                .heading
-                    order: 2
                 .office-persons
                     order: 5

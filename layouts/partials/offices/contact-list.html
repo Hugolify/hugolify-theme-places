@@ -15,7 +15,7 @@
             <li><b>{{ i18n "contact.email" }}</b> <a href="mailto:{{ partial "func/PrepareHTML" . }}" target="_blank" title="{{ safeHTML $title }}">{{ partial "func/PrepareHTML" . | truncate 20 "…" }}</a></li>
           {{ end }}
         </ul>
-        {{ if or .linkedin .twitter }}
+        {{ if or .linkedin .twitter .instagram }}
         <ul class="nav nav-social">
           {{ with .linkedin }}
             <li class="linkedin">
@@ -31,6 +31,15 @@
               {{ $name := i18n "contact.twitter" }}
               {{ $title := i18n "link.blank_aria" (dict "Title" $name) }}
               <a href="https://twitter.com/{{ partial "func/PrepareHTML" . }}" target="_blank" rel="noopener noreferrer" title="{{ safeHTML $title }}">
+                <span>{{ $name }}</span>
+              </a>
+            </li>
+          {{ end }}
+          {{ with .instagram }}
+            <li class="instagram">
+              {{ $name := i18n "contact.instagram" }}
+              {{ $title := i18n "link.blank_aria" (dict "Title" $name) }}
+              <a href="https://instagram.com/{{ partial "func/PrepareHTML" . }}" target="_blank" rel="noopener noreferrer" title="{{ safeHTML $title }}">
                 <span>{{ $name }}</span>
               </a>
             </li>

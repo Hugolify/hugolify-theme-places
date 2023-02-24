@@ -16,7 +16,7 @@ params:
       mobile: "300x300"
       scrollsnap: "240x103"
     image:
-      desktop: "300x"
+      desktop: "416x"
       mobile: "198x"
 
 # Default

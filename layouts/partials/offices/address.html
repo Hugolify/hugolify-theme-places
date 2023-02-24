@@ -2,7 +2,6 @@
   {{ if or .street .zipcode .city .country }}
     <address>
       <div>
-        <p><b>{{ partial "func/PrepareHTML" site.Title }}</b></p>
         {{ with .street }}
           <p>{{ partial "func/PrepareHTML" . }}</p>
         {{ end }}
