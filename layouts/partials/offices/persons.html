@@ -3,7 +3,9 @@
     {{ $paginator := sort (.Paginator.Pages) "Params.statutes" }}
     {{ if $paginator }}
       <section class="office-persons">
-        <h2>{{ i18n "offices.discover_persons" }}</h2>
+        <div class="heading"{{ partial "func/SetAnim" (dict "element" "heading") }}>
+          <h2>{{ i18n "offices.discover_persons" }}</h2>
+        </div>
         {{ partial "persons/items" $paginator }}
         {{ partial "nav/pagination.html" . }}
       </section>
