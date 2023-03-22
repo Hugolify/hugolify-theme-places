@@ -7,6 +7,12 @@
     .hero
         address
             @extend .small
+        .hero-content + .hero-content
+            align-self: end
+        .contact-list
+            --bs-card-bg: #{$gray-200}
+            --bs-card-spacer-x: 2rem
+            --bs-card-spacer-y: 2rem
         
 
     @include media-breakpoint-up(md)
