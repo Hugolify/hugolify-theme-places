@@ -21,6 +21,6 @@ params:
 
 # Default
 permalinks:
-  tags: /offices/:slug/
+  offices: /offices/:slug/
 taxonomies:
   office: offices
