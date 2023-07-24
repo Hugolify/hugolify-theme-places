@@ -6,7 +6,8 @@
         --bs-card-spacer-y: 0
     .hero
         address
-            @extend .small
+            --bs-card-color: #{$header-color}
+            font-size: $small-font-size
         .hero-content + .hero-content
             align-self: end
         .contact-list
