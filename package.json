@@ -1,10 +1,10 @@
 {
-    "name": "hugolify-theme-offices",
-    "version": "1.0.17",
+    "name": "hugolify-theme-places",
+    "version": "1.1.0",
     "homepage": "https://www.hugolify.io",
-    "repository": "https://github.com/hugolify/hugolify-theme-offices",
+    "repository": "https://github.com/hugolify/hugolify-theme-places",
     "bugs": {
-        "url": "https://github.com/hugolify/hugolify-theme-offices/issues"
+        "url": "https://github.com/hugolify/hugolify-theme-places/issues"
     },
     "author": {
         "email": "sebousan@gmail.com",
