@@ -1,5 +1,5 @@
-.page-offices
-    .office-persons
+.page-places
+    .place-persons
         @include margin-top($global-spacing-double)
     address
         --bs-card-spacer-x: 0
@@ -30,7 +30,7 @@
                     grid-column: 6/12
                     grid-row: 2
                     margin-top: calc(#{$paragraph-margin-bottom} * 2)
-                .office-persons
+                .place-persons
                     grid-column: 1/13
     @include media-breakpoint-up(lg)
         .grid
@@ -52,5 +52,5 @@
             >
                 .featured-image
                     width: 66%
-                .office-persons
+                .place-persons
                     order: 5
