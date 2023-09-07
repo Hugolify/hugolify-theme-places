@@ -10,7 +10,7 @@ module:
       target: layouts
 
 params:
-  offices:
+  places:
     thumbnail:
       desktop: "522x345"
       mobile: "300x198"
@@ -21,4 +21,4 @@ params:
 
 # Default
 permalinks:
-  offices: /offices/:slug/
+  places: /places/:slug/
