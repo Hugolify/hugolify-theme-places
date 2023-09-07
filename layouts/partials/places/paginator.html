@@ -3,5 +3,5 @@
 {{ if partial "func/HasImageHero" . }}
   {{ $atf = false }}
 {{ end }}
-{{ partial "offices/items" (dict "pages" $paginator "abovethefold" $atf) }}
+{{ partial "places/items" (dict "pages" $paginator "abovethefold" $atf) }}
 {{ partial "nav/pagination.html" . }}
