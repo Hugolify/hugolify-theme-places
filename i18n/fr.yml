@@ -1,9 +1,9 @@
-offices:
-  all: Tous les bureaux
-  latest: Derniers bureaux
-  discover: Découvrez le bureau
-  discover_persons: L’équipe du bureau
-  more: Découvrir plus de bureaux
+places:
+  all: Tous les lieux
+  latest: Derniers lieux
+  discover: Découvrez le lieu
+  discover_persons: L’équipe du lieu
+  more: Découvrir plus de lieux
   title:
-    one: Bureau
-    other: Bureaux
+    one: Lieu
+    other: Lieux
