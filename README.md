@@ -1,10 +1,10 @@
-# hugolify-theme-offices
+# hugolify-theme-places
 
 ## Install
-Edit `config/_default/module.yaml` to install the `hugolify-theme-offices` module:
+Edit `config/_default/module.yaml` to install the `hugolify-theme-places` module:
 ```yml
 imports:
-  - path: github.com/hugolify/hugolify-theme-offices
+  - path: github.com/hugolify/hugolify-theme-places
 ```
 
 ## Documentation
