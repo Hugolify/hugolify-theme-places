@@ -12,11 +12,11 @@ module:
 params:
   places:
     thumbnail:
-      desktop: "522x345"
-      mobile: "300x198"
-      scrollsnap: "240x158"
+      desktop: '522x345'
+      mobile: '300x198'
+      scrollsnap: '240x158'
     image:
-      desktop: "416x"
+      desktop: '416x'
 
 # Default
 permalinks:
