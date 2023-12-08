@@ -1,6 +1,6 @@
 .page-places
-    .place-persons
-        @include margin-top($global-spacing-double)
+    .places-persons
+        @include margin-top($global-spacing)
     address
         --bs-card-spacer-x: 0
         --bs-card-spacer-y: 0
@@ -15,7 +15,9 @@
             --bs-card-color: #{$header-color}
             --bs-card-spacer-x: 2rem
             --bs-card-spacer-y: 2rem
-        
+    .map
+        @include margin-top($global-spacing)
+        margin-bottom: 0
 
     @include media-breakpoint-up(md)
         .grid
@@ -30,7 +32,8 @@
                     grid-column: 6/12
                     grid-row: 2
                     margin-top: calc(#{$paragraph-margin-bottom} * 2)
-                .place-persons
+                .map,
+                .places-persons
                     grid-column: 1/13
     @include media-breakpoint-up(lg)
         .grid
@@ -50,5 +53,7 @@
     @include media-breakpoint-down(md)
         .grid
             >
-                .place-persons
+                .map
+                    order: 4
+                .places-persons
                     order: 5
