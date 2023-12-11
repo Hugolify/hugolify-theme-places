@@ -11,6 +11,8 @@ module:
 
 params:
   places:
+    items:
+      large: true 
     thumbnail:
       desktop: '306x202'
       desktop_large: '526x347'
