@@ -1,12 +1,15 @@
 .place
+    --bs-card-spacer-x: 0
     --bs-card-border-width: 0
     --bs-card-border-radius: 0
     --bs-card-inner-border-radius: 0
     --bs-card-bg: transparent
     --bs-card-cap-bg: transparent
     --bs-card-cap-padding-x: 0
-    --bs-card-cap-padding-y: 0
     @extend .card
+    .description
+        color: $text-muted
+        font-size: $small-font-size
     .media
         --bs-aspect-ratio: 66%
         img
@@ -17,8 +20,6 @@
         color: $text-muted
         font-size: $small-font-size
         margin-bottom: $paragraph-margin-bottom
-    .name
-        font-size: $h3-font-size
     .btn
         @extend .btn-link
         @extend .btn-sm
@@ -29,6 +30,11 @@
                 font-size: 1rem
                 margin-left: .2rem
                 transition: transform $transition-duration $transition-effect
+
+    .places-large &
+        .name
+            font-size: $h3-font-size
+
     
     @media (prefers-reduced-motion: no-preference)
         a:hover .btn::after
@@ -36,11 +42,16 @@
 
 
     @include media-breakpoint-up(lg)
-        align-items: center
-        flex-direction: row
-        .content,
-        .media
-            flex: 1
+        .places-large &
+            align-items: center
+            flex-direction: row
+            .content,
+            .media
+                flex-basis: 50%
+            .media
+                margin-right: calc(#{$grid-gutter-width} / 2)
+            .content
+                margin-left: calc(#{$grid-gutter-width} / 2)
 
     @include media-breakpoint-down(lg)
         --bs-card-spacer-x: 0

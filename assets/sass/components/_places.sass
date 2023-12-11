@@ -1,11 +1,15 @@
 .places
     --bs-gutter-y: calc(#{$global-spacing} / 2)
     @extend .row 
+    @extend .row-cols-1
+    @extend .row-cols-md-3
+    @extend .row-cols-lg-4
     @include media-breakpoint-up(md)
         --bs-gutter-y: #{$global-spacing}
-    > *
-        @extend .col-md-10
-        &:nth-child(even)
-            @extend .offset-md-2
+    &-large
+        > div
+            @extend .col-md-10
+            &:nth-child(even)
+                @extend .offset-md-2
     & + nav
         @include margin-top($global-spacing)

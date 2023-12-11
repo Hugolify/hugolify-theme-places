@@ -12,7 +12,8 @@ module:
 params:
   places:
     thumbnail:
-      desktop: '522x345'
+      desktop: '306x202'
+      desktop_large: '526x347'
       mobile: '300x198'
       scrollsnap: '240x158'
     image:

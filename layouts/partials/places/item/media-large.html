@@ -1,0 +1,10 @@
+{{- $desktop := site.Params.places.thumbnail.desktop_large | default false -}}
+{{- $mobile := site.Params.places.thumbnail.mobile | default false -}}
+{{ if .Scratch.Get "scrollsnap" }}
+  {{- $mobile = site.Params.places.thumbnail.scrollsnap | default false -}}
+{{ end }}
+{{ partial "commons/item/media.html" (dict
+      "context" .
+      "desktop" $desktop
+      "mobile" $mobile
+    ) }}
