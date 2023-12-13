@@ -1,21 +1,4 @@
-{{- $markers := slice -}}
-{{- range .Pages -}}
-  {{- $title := partial "func/PrepareHTML" .Title -}}
-  {{- $permalink := printf `<p><a href="%s">%s</a></p>` .Permalink (i18n "more") -}}
-  {{- with .Params.address -}}
-    {{- $address := partial "commons/address" (dict "address" .) -}}
-    {{- $popup := print "<p><strong>" $title "</strong></p>" -}}
-    {{- $popup = print $popup $address $permalink -}}
-    {{- with .coordinates -}}
-      {{- $coordinates := slice -}}
-      {{- range . -}}
-        {{- $coordinates = $coordinates | append . -}}
-      {{- end -}}
-      {{- $marker := (dict "title" $popup "coordinates" $coordinates) -}}
-      {{- $markers = $markers | append $marker -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-{{- if gt (len $markers) 0 -}}
-  {{ partial "commons/map" (dict "location" ($markers | jsonify)) }}
+{{- $markers := partial "func/GetMarkers" .Pages -}}
+{{- if $markers -}}
+  {{ partial "commons/map" (dict "location" $markers) }}
 {{- end -}}
