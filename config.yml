@@ -11,8 +11,9 @@ module:
 
 params:
   places:
+    map: false # Boolean, showing map on places list 
     items:
-      large: true 
+      large: true # Boolean, set large or small items
     thumbnail:
       desktop: '306x202'
       desktop_large: '526x347'
