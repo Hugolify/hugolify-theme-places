@@ -10,6 +10,9 @@ module:
       target: layouts
 
 params:
+  admin:
+    collections:
+      places: true
   places:
     map: false # Boolean, showing map on places list 
     items:
