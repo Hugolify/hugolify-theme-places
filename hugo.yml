@@ -12,7 +12,8 @@ module:
 params:
   admin:
     collections:
-      places: true
+      places:
+        enable: true
   places:
     map: false # Boolean, showing map on places list 
     items:
