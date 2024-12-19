@@ -22,7 +22,7 @@
         margin-bottom: $paragraph-margin-bottom
     .btn
         @extend .btn-link
-        @extend .btn-sm
+        @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm)
         margin-left: calc(var(--bs-btn-padding-x) * -1)
         @if variable-exists(icons-map)
             &::after
