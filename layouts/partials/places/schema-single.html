@@ -2,38 +2,37 @@
   {
     "@context": "https://schema.org",
     "@type": "Place",
-    "name": {{ .Title | plainify | safeHTML }},
-
-    {{ with .Params.image }}
-      "image": {{ .src | absURL }},
-    {{ end }}
-
-    {{ with .Description }}
-      "description": {{ partial "func/TruncateContent" (dict "content" .) }},
-    {{ end }}
-
+    "name": {{ partial "func/PrepareData" .Title }},
     "url": {{ .Permalink }},
 
-    {{ with .Params.contact }}
-      {{ with .email }}
-        "email": {{ . | plainify | safeHTML }},
-      {{ end }}
-      {{ with .phone }}
-        "telephone": {{ . | plainify | safeHTML }},
-      {{ end }}
-      {{ with .fax }}
-        "faxNumber": {{ . | plainify | safeHTML }},
-      {{ end }}
-    {{ end }}
+    {{- with .Params.image }}
+      "image": {{ .src | absURL }},
+    {{ end -}}
 
-    {{ with .Params.address }}
+    {{- with .Description }}
+      "description": {{ partial "func/TruncateContent" (dict "content" .) }},
+    {{ end -}}
+
+    {{- with .Params.contact }}
+      {{- with .email }}
+        "email": {{ partial "func/PrepareData" . }},
+      {{ end -}}
+      {{- with .phone }}
+        "telephone": {{ partial "func/PrepareData" . }},
+      {{ end -}}
+      {{- with .fax }}
+        "faxNumber": {{ partial "func/PrepareData" . }},
+      {{ end -}}
+    {{ end -}}
+
+    {{- with .Params.address }}
       "address":{
         "@type": "PostalAddress",
-        "addressCountry": {{ .country | plainify | safeHTML }},
-        "addressLocality": {{ .city | plainify | safeHTML }},
-        "postalCode": {{ .zipcode | plainify | safeHTML }},
-        "streetAddress": {{ .street | plainify | safeHTML }}
+        "addressCountry": {{ partial "func/PrepareData" .country }},
+        "addressLocality": {{ partial "func/PrepareData" .city }},
+        "postalCode": {{ partial "func/PrepareData" .zipcode }},
+        "streetAddress": {{ partial "func/PrepareData" .street }}
       },
-    {{ end }}
+    {{ end -}}
   }
 </script>
