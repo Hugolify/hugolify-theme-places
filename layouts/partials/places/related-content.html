@@ -1,4 +1,8 @@
-{{ $persons_places := "places/persons_places.html" }}
-{{ if templates.Exists ( printf "partials/%s" $persons_places ) }}
+{{- $persons_places := "places/persons_places.html" -}}
+{{- if templates.Exists ( printf "partials/%s" $persons_places ) }}
   {{ partial $persons_places . }}
-{{ end }}
+{{ end -}}
+{{- $jobs_places := "places/jobs_places.html" -}}
+{{- if templates.Exists ( printf "partials/%s" $jobs_places ) }}
+  {{ partial $jobs_places . }}
+{{ end -}}

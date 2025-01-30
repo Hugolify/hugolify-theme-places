@@ -18,6 +18,18 @@
     .map
         @include margin-top($global-spacing)
         margin-bottom: 0
+    .latest
+        @include padding-bottom($global-spacing)
+        @include padding-top($global-spacing)
+        background-color: $light
+        .media
+            background-color: darken($light, 2)
+    div + .latest 
+        @include padding-top($global-spacing-double)
+        @include margin-top($global-spacing-double)
+    .latest:last-child
+        @include padding-bottom($global-spacing-double)
+        @include margin-bottom(- $global-spacing-double)
 
     @include media-breakpoint-up(md)
         .grid
