@@ -1,10 +1,4 @@
-{{- with .Params.address -}}
-  {{- with .coordinates -}}
-    {{- $coordinates := slice -}}
-    {{- range . -}}
-      {{- $coordinates = $coordinates | append . -}}
-    {{- end -}}
-    {{- $marker := slice (dict "coordinates" $coordinates) -}}
-    {{ partial "commons/map" (dict "location" ($marker | jsonify)) }}
-  {{- end -}}
+{{- $markers := partial "func/GetMarkers" (slice .) -}}
+{{- if $markers -}}
+  {{ partial "commons/map" (dict "location" $markers) }}
 {{- end -}}

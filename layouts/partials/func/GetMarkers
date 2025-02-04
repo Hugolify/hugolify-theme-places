@@ -1,22 +1,37 @@
 {{- $markers := slice -}}
 {{- range . -}}
-  {{- if .Params.address.coordinates -}}
+  {{- if or .Params.address.coordinates .Params.address.location -}}
+    
     {{- $title := partial "func/PrepareHTML" .Title -}}
     {{- $permalink := printf `<p><a href="%s">%s</a></p>` .Permalink (i18n "more") -}}
+    
     {{- with .Params.address -}}
-      {{- $address := partial "commons/address" (dict "address" .) -}}
-      {{- $popup := print "<p><strong>" $title "</strong></p>" -}}
-      {{- $popup = print $popup $address $permalink -}}
+      
+      {{ $address := partial "commons/address" (dict "address" .) }}
+      {{ $popup := print "<p><strong>" $title "</strong></p>" }}
+      {{ $popup = print $popup $address $permalink }}
+
+      {{ $coordinates := slice }}
+
       {{- with .coordinates -}}
-        {{- $coordinates := slice -}}
         {{- range . -}}
           {{- $coordinates = $coordinates | append . -}}
         {{- end -}}
-        {{- $marker := (dict "title" $popup "coordinates" $coordinates) -}}
-        {{- $markers = $markers | append $marker -}}
       {{- end -}}
+
+      {{- with .location -}}
+        {{- $getCoordinates := (unmarshal .).coordinates -}}
+        {{- $getCoordinates = partial "func/ReverseSlice" $getCoordinates -}}
+        {{- $coordinates = $coordinates | append $getCoordinates -}}
+      {{- end -}}
+
+      {{- $marker := (dict "title" $popup "coordinates" $coordinates) -}}
+      {{- $markers = $markers | append $marker -}}
+
     {{- end -}}
   {{- end -}}
 {{- end -}}
+
 {{- $markers = cond (gt (len $markers) 0) ($markers | jsonify) false }}
+
 {{- return $markers -}}

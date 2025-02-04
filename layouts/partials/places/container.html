@@ -1,8 +1,8 @@
 {{- $showMap := site.Params.places.map | default false -}}
 <div class="container">
   {{ partial "places/heading" . }}
-  {{ if $showMap -}}
+  {{- if $showMap -}}
     {{ partial "places/items-map" . }}
-  {{- end }}
+  {{ end -}}
   {{ partial "places/paginator" . }}
 </div>
