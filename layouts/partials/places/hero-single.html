@@ -1,13 +1,13 @@
-<header class="hero hero-with-second-content"{{ partial "func/SetAnim" (dict "element" "hero") }}>
+<header class="hero hero-with-second-content" {{- partial "func/SetAnim.html" (dict "element" "hero") }}>
   <div class="container">
     <div class="row">
       <div class="hero-content">
-        <h1>{{ partial "func/PrepareHTML" .Title }}</h1>
-        {{ partial "commons/description" . }}
-        {{ partial "places/address" . }}
+        <h1>{{ partial "func/PrepareHTML.html" .Title }}</h1>
+        {{ partial "commons/description.html" . }}
+        {{ partial "places/address.html" . }}
       </div>
       <div class="hero-content">
-        {{ partial "places/contact-list" . }}
+        {{ partial "places/contact-list.html" . }}
       </div>
     </div>
   </div>

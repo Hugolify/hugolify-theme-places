@@ -2,12 +2,12 @@
 {{- range . -}}
   {{- if or .Params.address.coordinates .Params.address.location -}}
     
-    {{- $title := partial "func/PrepareHTML" .Title -}}
+    {{- $title := partial "func/PrepareHTML.html" .Title -}}
     {{- $permalink := printf `<p><a href="%s">%s</a></p>` .Permalink (i18n "more") -}}
     
     {{- with .Params.address -}}
       
-      {{ $address := partial "commons/address" (dict "address" .) }}
+      {{ $address := partial "commons/address.html" (dict "address" .) }}
       {{ $popup := print "<p><strong>" $title "</strong></p>" }}
       {{ $popup = print $popup $address $permalink }}
 
@@ -21,7 +21,7 @@
 
       {{- with .location -}}
         {{- $getCoordinates := (unmarshal .).coordinates -}}
-        {{- $getCoordinates = partial "func/ReverseSlice" $getCoordinates -}}
+        {{- $getCoordinates = partial "func/ReverseSlice.html" $getCoordinates -}}
         {{- $coordinates = $coordinates | append $getCoordinates -}}
       {{- end -}}
 

@@ -1,4 +1,4 @@
 {{- $markers := partial "func/GetMarkers.html" (slice .) -}}
 {{- if $markers -}}
-  {{ partial "commons/map" (dict "location" $markers) }}
+  {{ partial "commons/map.html" (dict "location" $markers) }}
 {{- end -}}

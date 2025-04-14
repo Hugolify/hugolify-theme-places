@@ -1,9 +1,9 @@
 {{ define "hero"}}
-  {{- partial "places/hero" . -}}
+  {{- partial "places/hero.html" . -}}
 {{ end }}
 
 {{ define "main" }}
-  {{ partial "places/schema" . }}
-  {{ partial "places/blocks" . }}
-  {{ partial "places/container" . }}
+  {{ partial "places/schema.html" . }}
+  {{ partial "places/blocks.html" . }}
+  {{ partial "places/container.html" . }}
 {{ end }}

@@ -1,10 +1,10 @@
 {{ define "hero"}}
-  {{- partial "places/hero-single" . -}}
+  {{- partial "places/hero-single.html" . -}}
 {{ end }}
 
 {{ define "main" }}
-  {{ partial "places/schema-single" . }}
-  {{ partial "places/container-single" . }}
-  {{ partial "places/blocks" . }}
-  {{ partial "places/related-content" . }}
+  {{ partial "places/schema-single.html" . }}
+  {{ partial "places/container-single.html" . }}
+  {{ partial "places/blocks.html" . }}
+  {{ partial "places/related-content.html" . }}
 {{ end }}
