@@ -12,12 +12,19 @@ module:
       target: layouts
 
 params:
+  
+  # Admin
   admin:
     collections:
       places:
         enable: true
+        filter:
+          - field: isIndex
+            value: false
         icon:
           sveltiacms: location_on
+  
+  # Images
   places:
     map: false # Boolean, showing map on places list 
     items:
