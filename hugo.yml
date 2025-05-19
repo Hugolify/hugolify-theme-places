@@ -4,6 +4,8 @@ module:
       target: archetypes
     - source: assets
       target: assets
+    - source: content
+      target: content
     - source: i18n
       target: i18n
     - source: layouts
@@ -14,6 +16,8 @@ params:
     collections:
       places:
         enable: true
+        icon:
+          sveltiacms: location_on
   places:
     map: false # Boolean, showing map on places list 
     items:
@@ -28,4 +32,5 @@ params:
 
 # Default
 permalinks:
-  places: /places/:slug/
+  page:
+    places: /places/:slug/
