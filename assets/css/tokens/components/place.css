@@ -1,0 +1,42 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* place.css */
+@layer tokens {
+  :root {
+    --place-border-radius: var(--item-border-radius);
+    --place-border-style: var(--item-border-style);
+    --place-border-width: var(--item-border-width);
+    --place-btn-border-width: var(--item-btn-border-width);
+    --place-btn-color-background: var(--item-btn-color-background);
+    --place-btn-color-text: var(--item-btn-color-text);
+    --place-btn-padding: var(--item-btn-padding);
+    --place-btn-text-decoration: var(--item-btn-text-decoration);
+    --place-btn-text-decoration-hover: var(--item-btn-text-decoration-hover);
+    --place-color-background: var(--item-color-background);
+    --place-color-border: var(--item-color-border);
+    --place-color-text: var(--item-color-text);
+    --place-color-text-muted: var(--item-color-text-muted);
+    --place-gap: var(--item-gap);
+    --place-media-color-background: var(--item-media-color-background);
+    --place-media-order: var(--item-media-order);
+    --place-media-ratio: var(--item-media-ratio);
+    --place-metas-border-end: var(--item-metas-border-end);
+    --place-metas-border-start: var(--item-metas-border-start);
+    --place-metas-color-background: var(--item-metas-color-background);
+    --place-metas-font-size: var(--item-metas-font-size);
+    --place-metas-order: var(--item-metas-order);
+    --place-metas-padding-inline: var(--item-metas-padding-inline);
+    --place-metas-padding-block-start: var(--item-metas-padding-block-start);
+    --place-metas-padding-block-end: var(--item-metas-padding-block-end);
+    --place-order: var(--item-order);
+    --place-padding-inline: var(--item-padding-inline);
+    --place-padding-block: var(--item-padding-block);
+    --place-shadow: var(--item-shadow);
+    --place-shadow-hover: var(--item-shadow-hover);
+    --place-title-color: var(--item-title-color);
+    --place-title-font-size: var(--item-title-font-size);
+    --place-title-font-weight: var(--item-title-font-weight);
+    --place-title-line-height: var(--item-title-line-height);
+    --place-transition: var(--item-transition);
+  }
+}

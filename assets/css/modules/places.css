@@ -1,0 +1,12 @@
+/* css/modules/places.css — hugolify-theme-places entry point */
+
+/* Tokens */
+@import '../tokens/places.css';
+
+/* Components */
+@import '../components/place.css';
+@import '../components/places.css';
+
+/* Pages */
+@import '../pages/place.css';
+@import '../pages/places.css';

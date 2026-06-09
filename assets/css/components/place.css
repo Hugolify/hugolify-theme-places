@@ -1,0 +1,59 @@
+/* components/place.css */
+/*
+ * .place remaps the full --item-* API (and the inner --btn-*) onto its
+ * --place-* tokens, so any value can be tuned from place.json without
+ * touching this file.
+ * Usage: <article class="item place">
+ */
+@layer components {
+  .place {
+    /* Box */
+    --item-color-background: var(--place-color-background);
+    --item-color-border: var(--place-color-border);
+    --item-color-text: var(--place-color-text);
+    --item-color-text-muted: var(--place-color-text-muted);
+    --item-border-radius: var(--place-border-radius);
+    --item-border-style: var(--place-border-style);
+    --item-border-width: var(--place-border-width);
+    --item-shadow: var(--place-shadow);
+    --item-shadow-hover: var(--place-shadow-hover);
+    --item-transition: var(--place-transition);
+
+    /* Content */
+    --item-gap: var(--place-gap);
+    --item-order: var(--place-order);
+    --item-padding-block: var(--place-padding-block);
+    --item-padding-inline: var(--place-padding-inline);
+
+    /* Title */
+    --item-title-color: var(--place-title-color);
+    --item-title-font-size: var(--place-title-font-size);
+    --item-title-font-weight: var(--place-title-font-weight);
+    --item-title-line-height: var(--place-title-line-height);
+
+    /* Metas */
+    --item-metas-border-end: var(--place-metas-border-end);
+    --item-metas-border-start: var(--place-metas-border-start);
+    --item-metas-color-background: var(--place-metas-color-background);
+    --item-metas-font-size: var(--place-metas-font-size);
+    --item-metas-order: var(--place-metas-order);
+    --item-metas-padding-block-end: var(--place-metas-padding-block-end);
+    --item-metas-padding-block-start: var(--place-metas-padding-block-start);
+    --item-metas-padding-inline: var(--place-metas-padding-inline);
+
+    /* Media */
+    --item-media-border-radius: var(--place-media-border-radius);
+    --item-media-color-background: var(--place-media-color-background);
+    --item-media-order: var(--place-media-order);
+    --item-media-ratio: var(--place-media-ratio);
+
+    /* Inner button (--btn-* is the button component's own API) */
+    --btn-border-width: var(--place-btn-border-width);
+    --btn-color-background: var(--place-btn-color-background);
+    --btn-color-text: var(--place-btn-color-text);
+    --btn-color-text-decoration: var(--place-btn-text-decoration);
+    --btn-color-text-decoration-hover: var(--place-btn-text-decoration-hover);
+    --btn-padding-inline: var(--place-btn-padding);
+    --btn-padding-block: var(--place-btn-padding);
+  }
+}

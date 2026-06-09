@@ -1,0 +1,12 @@
+/* components/places.css */
+/*
+ * .places remaps the full --items-* API onto its --places-* tokens, so any
+ * value can be tuned from places.json without touching this file.
+ * Usage: <article class="items places">
+ */
+@layer components {
+  .places {
+    --items-min-width: var(--places-min-width);
+    --items-nav-margin-block-start: var(--places-nav-margin-block-start);
+  }
+}
