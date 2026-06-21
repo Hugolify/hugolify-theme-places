@@ -27,7 +27,6 @@ params:
           material_icons: location_on
           material_symbols: location_on
           lucide: map-pin
-          sveltiacms: location_on # legacy
   
   # Images
   places:
