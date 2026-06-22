@@ -11,9 +11,9 @@ address:
 contact:
   email:
   website:
-  twitter:
   linkedin:
   instagram:
+  x:
 image:
   src:
 ---
