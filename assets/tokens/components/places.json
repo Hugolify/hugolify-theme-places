@@ -1,16 +1,8 @@
 {
   "places": {
     "minWidth": {
-      "$value": "{items.minWidth}",
+      "$value": "40ch",
       "$type": "dimension"
-    },
-    "nav": {
-      "margin": {
-        "blockStart": {
-          "$type": "dimension",
-          "$value": "{items.nav.margin.blockStart}"
-        }
-      }
     }
   }
 }

@@ -7,6 +7,5 @@
 @layer components {
   .places {
     --items-min-width: var(--places-min-width);
-    --items-nav-margin-block-start: var(--places-nav-margin-block-start);
   }
 }

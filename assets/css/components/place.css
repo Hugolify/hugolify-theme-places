@@ -7,5 +7,11 @@
  */
 @layer components {
   .place {
+    address {
+      font-size: var(--item-font-size);
+    }
+    .btn {
+      display: none;
+    }
   }
 }

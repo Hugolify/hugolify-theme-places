@@ -1,5 +1,0 @@
-{{- $dict := . -}}
-{{- if reflect.IsMap . }}
-  {{- $dict = merge $dict (dict "large" true) -}}
-{{ end -}}
-{{ partial "commons/items.html" $dict }}

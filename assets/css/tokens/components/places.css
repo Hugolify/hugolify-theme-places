@@ -3,7 +3,6 @@
 /* places.css */
 @layer tokens {
   :root {
-    --places-min-width: var(--items-min-width);
-    --places-nav-margin-block-start: var(--items-nav-margin-block-start);
+    --places-min-width: 40ch;
   }
 }
