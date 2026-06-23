@@ -37,12 +37,12 @@ params:
       desktop: '643x425'
       mobile: '310x205'
       scrollsnap: '240x158'
-      sizes: calc(100vw - 3.5rem), calc(50vw - 3.5rem)
-    
+      sizes: 100vw, 50vw
+
     # Featured image
     image:
       desktop: '420x'
-      sizes: 100vw, calc(100vw - 3.5rem), calc(33vw - 3.5rem)
+      sizes: 100vw, 100vw, 30vw
 
 # Default
 permalinks:
