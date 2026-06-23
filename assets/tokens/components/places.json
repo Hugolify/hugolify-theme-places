@@ -1,0 +1,8 @@
+{
+  "places": {
+    "minWidth": {
+      "$value": "40ch",
+      "$type": "dimension"
+    }
+  }
+}

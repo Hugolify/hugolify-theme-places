@@ -1,0 +1,17 @@
+/* components/place.css */
+/*
+ * .place remaps the full --item-* API (and the inner --btn-*) onto its
+ * --place-* tokens, so any value can be tuned from place.json without
+ * touching this file.
+ * Usage: <article class="item place">
+ */
+@layer components {
+  .place {
+    address {
+      font-size: var(--item-font-size);
+    }
+    .btn {
+      display: none;
+    }
+  }
+}
