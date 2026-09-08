@@ -1,5 +1,5 @@
 {{- $showMap := site.Params.places.map | default false -}}
-<div class="container">
+<div class="container container-list">
   {{ partial "places/heading.html" . }}
   {{- if $showMap -}}
     {{ partial "places/items-map.html" . }}
