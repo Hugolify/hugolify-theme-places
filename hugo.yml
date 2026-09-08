@@ -27,6 +27,7 @@ params:
           material_icons: location_on
           material_symbols: location_on
           lucide: map-pin
+        path: "{{slug}}"
   
   # Config
   places:
