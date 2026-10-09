@@ -1,38 +1,11 @@
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Place",
-    "name": {{ partial "func/PrepareData.html" .Title }},
-    "url": {{ .Permalink }},
+{{- /* Schema.org for a place: an office of the organization when its
+       schema.type names an organization subtype, a location otherwise — see
+       func/GetSchemaEntity.html. */ -}}
+{{- $entity := partial "func/GetSchemaEntity.html" . -}}
 
-    {{- with .Params.image }}
-      "image": {{ .src | absURL }},
-    {{ end -}}
+{{- $webpage := partial "func/GetSchemaWebPage.html" (dict
+  "page" .
+  "mainEntity" (dict "@id" (index $entity "@id"))
+) -}}
 
-    {{- with .Description }}
-      "description": {{ partial "func/TruncateContent.html" (dict "content" .) }},
-    {{ end -}}
-
-    {{- with .Params.contact }}
-      {{- with .email }}
-        "email": {{ partial "func/PrepareData.html" . }},
-      {{ end -}}
-      {{- with .phone }}
-        "telephone": {{ partial "func/PrepareData.html" . }},
-      {{ end -}}
-      {{- with .fax }}
-        "faxNumber": {{ partial "func/PrepareData.html" . }},
-      {{ end -}}
-    {{ end -}}
-
-    {{- with .Params.address }}
-      "address":{
-        "@type": "PostalAddress",
-        "addressCountry": {{ partial "func/PrepareData.html" .country }},
-        "addressLocality": {{ partial "func/PrepareData.html" .city }},
-        "postalCode": {{ partial "func/PrepareData.html" .zipcode }},
-        "streetAddress": {{ partial "func/PrepareData.html" .street }}
-      },
-    {{ end -}}
-  }
-</script>
+{{- partial "commons/jsonld.html" (slice $webpage $entity) -}}
