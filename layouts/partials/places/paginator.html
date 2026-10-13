@@ -1,5 +1,5 @@
 {{- if .Pages -}}
-  {{- $paginator := .Paginator.Pages -}}
+  {{- $paginator := (partial "func/GetPaginator.html" .).Pages -}}
   {{- $atf := cond (partial "func/HasImageHero.html" .) false true -}}
   {{ partial "places/items.html" (dict "pages" $paginator "abovethefold" $atf) }}
   {{ partial "nav/pagination.html" . }}
