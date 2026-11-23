@@ -45,6 +45,11 @@ params:
       desktop: '420x'
       sizes: 100vw, 100vw, 30vw
 
+    # vCard published next to each place page: /places/:slug/:slug.vcf
+    vcard:
+      enable: true
+      organization: '' # defaults to the site title
+
 # Default
 permalinks:
   page:

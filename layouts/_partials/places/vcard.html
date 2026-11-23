@@ -1,0 +1,68 @@
+{{- /*
+  Builds the vCard of a place and returns it as a `.vcf` resource named after
+  the page slug and published next to the place page, e.g.
+  /places/paris-office/paris-office.vcf
+
+  Returns `false` when disabled through `params.places.vcard.enable`.
+
+  @param  {page}             context  The place page.
+  @return {resource|boolean}          The vCard resource, or false.
+
+  @example
+    {{ with partial "places/vcard.html" . }}
+      {{ partial "commons/contact/vcard.html" . }}
+    {{ end }}
+*/ -}}
+
+{{- $page := . -}}
+{{- $vcard := false -}}
+
+{{- $options := site.Params.places.vcard | default dict -}}
+{{- if $options.enable -}}
+
+  {{- $properties := slice -}}
+
+  {{- /* Name */ -}}
+  {{- with $page.Title -}}
+    {{- $properties = $properties | append (printf "FN:%s" (partial "func/EscapeVCard.html" .)) -}}
+  {{- end -}}
+
+  {{- /* Organization: the company of the place, or the site's */ -}}
+  {{- with $page.Params.company | default $options.organization | default site.Title -}}
+    {{- $properties = $properties | append (printf "ORG:%s" (partial "func/EscapeVCard.html" .)) -}}
+  {{- end -}}
+
+  {{- with $page.Params.address -}}
+    {{- /* Postal address: PO box;extended;street;locality;region;postal code;country */ -}}
+    {{- $street := partial "func/EscapeVCard.html" (.street | default "") -}}
+    {{- $city := partial "func/EscapeVCard.html" (.city | default "") -}}
+    {{- $region := partial "func/EscapeVCard.html" (.region | default "") -}}
+    {{- $zipcode := partial "func/EscapeVCard.html" (string (.zipcode | default "")) -}}
+    {{- $country := partial "func/EscapeVCard.html" (partial "func/GetAddressCountry.html" .) -}}
+    {{- if or $street $city $region $zipcode $country -}}
+      {{- $properties = $properties | append (printf "ADR;TYPE=WORK:;;%s;%s;%s;%s;%s" $street $city $region $zipcode $country) -}}
+    {{- end -}}
+
+    {{- /* Coordinates, read the way the structured data reads them */ -}}
+    {{- with partial "func/GetSchemaGeo.html" . -}}
+      {{- $properties = $properties | append (printf "GEO:%v;%v" .latitude .longitude) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- with $page.Params.contact -}}
+    {{- with .phone -}}
+      {{- $properties = $properties | append (printf "TEL;TYPE=WORK,VOICE:%s" (partial "func/EscapeVCard.html" .)) -}}
+    {{- end -}}
+    {{- with .fax -}}
+      {{- $properties = $properties | append (printf "TEL;TYPE=WORK,FAX:%s" (partial "func/EscapeVCard.html" .)) -}}
+    {{- end -}}
+    {{- with .email -}}
+      {{- $properties = $properties | append (printf "EMAIL:%s" (partial "func/EscapeVCard.html" .)) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $vcard = partial "commons/contact/vcard/build.html" (dict "page" $page "properties" $properties) -}}
+
+{{- end -}}
+
+{{- return $vcard -}}

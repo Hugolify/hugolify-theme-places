@@ -1,0 +1,15 @@
+{{- /*
+  Hook read by `commons/contact/contacts.html`: returns the vCard listed with the
+  contact details of a place page, or false. The list renders the entry itself.
+
+  `contacts.html` is shared with the place cards of a listing, so only the
+  place page itself gets its vCard.
+
+  @context {page}             . The current page.
+  @return  {resource|boolean}   The vCard resource, or false.
+*/ -}}
+{{- $vcard := false -}}
+{{- if eq .Kind "page" -}}
+  {{- $vcard = partial "places/vcard.html" . -}}
+{{- end -}}
+{{- return $vcard -}}
