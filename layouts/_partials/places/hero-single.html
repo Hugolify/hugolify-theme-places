@@ -5,6 +5,7 @@
   <div class="container">
     <div class="row">
       <div class="hero-content">
+        {{- partial "commons/hero/back.html" . }}
         <h1>{{ partial "func/PrepareHTML.html" .Title }}</h1>
         {{ partial "commons/description.html" . }}
         {{ partial "places/address.html" . }}
