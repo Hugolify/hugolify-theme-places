@@ -23,6 +23,7 @@ params:
             value: false
         icon:
           bootstrap_icons: geo-alt-fill
+          hugeicons: Location01
           iconoir: map-pin
           material_icons: location_on
           material_symbols: location_on
